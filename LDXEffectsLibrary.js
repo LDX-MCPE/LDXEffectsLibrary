@@ -1,25 +1,27 @@
-function show(name,finish) {
-showingName = name;
-showingFinish = finish;
-showingFinished = false;
-showingo = parseInt(0);
-document.getElementById(showingName).style.display = "block";
-showing();
+function show(id,func) {
+LDX_ShowingElementID = id;
+LDX_ShowingEndFunction = func;
+LDX_ShowingFinished = false;
+LDX_ShowingOpacity = 0;
+document.getElementById(LDX_ShowingElementID).style.opacity = LDX_ShowingOpacity;
+document.getElementById(LDX_ShowingElementID).style.filter = "alpha(opacity=" + LDX_ShowingOpacity + ")";
+document.getElementById(LDX_ShowingElementID).style.display = "block";
+LDX_ShowingElement();
 }
-function showing() {
-if(showingo < 100) {
-showingo++;
+function LDX_ShowingElement() {
+if(LDX_ShowingOpacity < 100) {
+LDX_ShowingOpacity++;
 } else {
-showingFinished = true;
+LDX_ShowingFinished = true;
 }
-document.getElementById(showingName).style.opacity = showingo / 100;
-document.getElementById(showingName).style.filter = "alpha(opacity=" + showingo * 100 + ")";
-if(showingFinished == true) {
-if(showingFinish != false) {
-window.setTimeout(showingFinish,1);
+document.getElementById(LDX_ShowingElementID).style.opacity = LDX_ShowingOpacity / 100;
+document.getElementById(LDX_ShowingElementID).style.filter = "alpha(opacity=" + LDX_ShowingOpacity + ")";
+if(LDX_ShowingFinished == true) {
+if(LDX_ShowingEndFunction != false) {
+LDX_ShowingEndFunction();
 }
 } else {
-window.setTimeout(showing,10);
+window.setTimeout(LDX_ShowingElement,10);
 }
 }
 function hide(name,finish) {
@@ -44,5 +46,41 @@ window.setTimeout(hidingFinish,1);
 }
 } else {
 window.setTimeout(hiding,10);
+}
+}
+function backgroundFade(r,g,b,nr,ng,nb,end) {
+LDX_r = r;
+LDX_g = g;
+LDX_b = b;
+LDX_nr = nr;
+LDX_ng = ng;
+LDX_nb = nb;
+LDX_EndFade = end;
+backgroundFading();
+}
+function backgroundFading() {
+if(LDX_r < LDX_nr) {
+LDX_r++;
+}
+if(LDX_r > LDX_nr) {
+LDX_r--;
+}
+if(LDX_g < LDX_ng) {
+LDX_g++;
+}
+if(LDX_g > LDX_ng) {
+LDX_g--;
+}
+if(LDX_b < LDX_nb) {
+LDX_b++;
+}
+if(LDX_b > LDX_nb) {
+LDX_b--;
+}
+document.body.style.backgroundColor = "rgb(" + LDX_r + "," + LDX_g + "," + LDX_b + ")";
+if((LDX_r == LDX_nr) && (LDX_g == LDX_ng) && (LDX_b == LDX_nb)) {
+LDX_EndFade();
+} else {
+window.setTimeout(backgroundFading,10);
 }
 }
