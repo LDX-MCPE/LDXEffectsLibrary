@@ -48,7 +48,7 @@ window.setTimeout(hidingFinish,1);
 window.setTimeout(hiding,10);
 }
 }
-function backgroundFade(r,g,b,nr,ng,nb,end) {
+function fadeBackground(r,g,b,nr,ng,nb,end) {
 LDX_r = r;
 LDX_g = g;
 LDX_b = b;
