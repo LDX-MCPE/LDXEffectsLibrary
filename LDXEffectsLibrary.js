@@ -58,7 +58,7 @@ LDX_nb = nb;
 LDX_EndFade = end;
 backgroundFading();
 }
-function backgroundFading() {
+function fadingBackground() {
 if(LDX_r < LDX_nr) {
 LDX_r++;
 }
@@ -81,6 +81,6 @@ document.body.style.backgroundColor = "rgb(" + LDX_r + "," + LDX_g + "," + LDX_b
 if((LDX_r == LDX_nr) && (LDX_g == LDX_ng) && (LDX_b == LDX_nb)) {
 LDX_EndFade();
 } else {
-window.setTimeout(backgroundFading,10);
+window.setTimeout(fadingBackground,10);
 }
 }
