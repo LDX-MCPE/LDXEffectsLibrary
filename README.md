@@ -12,7 +12,7 @@ show(_ID of HTML element to show_,_Function name to execute on completion_);
 
 Example:
 ```javascript
-show("mydiv",divIsShown);
+show("mydiv",divIsShown); // Shows #mydiv then executes the divIsShown function
 ```
 
 ### hide function
@@ -23,7 +23,7 @@ hide(_ID of HTML element to hide_,_Function name to execute on completion_);
 
 Example:
 ```javascript
-hide("mydiv",divIsHiden);
+hide("mydiv",divIsHiden); // Hides #mydiv then executes the divIsHiden function
 ```
 
 ### fadeBackground function
@@ -34,5 +34,5 @@ fadeBackground(_Current red value_,_Current green value_,_Current blue value_,_N
 
 Example:
 ```javascript
-fadeBackground(0,0,0,0,191,255,backgroundIsFaded);
+fadeBackground(0,0,0,0,191,255,backgroundIsFaded); // Fades the body's background color from Black to DeepSkyBlue then executes the backgroundIsFaded function
 ```
