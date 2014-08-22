@@ -34,5 +34,5 @@ fadeBackground(_Current red value_,_Current green value_,_Current blue value_,_N
 
 Example:
 ```javascript
-show(0,0,0,0,191,255,backgroundIsFaded);
+fadeBackground(0,0,0,0,191,255,backgroundIsFaded);
 ```
