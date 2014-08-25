@@ -8,12 +8,14 @@ document.getElementById(LDX_ShowingElementID).style.filter = "alpha(opacity=" + 
 document.getElementById(LDX_ShowingElementID).style.display = "block";
 LDX_ShowingElement();
 }
+
 function LDX_ShowingElement() {
 if(LDX_ShowingOpacity < 100) {
 LDX_ShowingOpacity++;
 } else {
 LDX_ShowingFinished = true;
 }
+
 document.getElementById(LDX_ShowingElementID).style.opacity = LDX_ShowingOpacity / 100;
 document.getElementById(LDX_ShowingElementID).style.filter = "alpha(opacity=" + LDX_ShowingOpacity + ")";
 if(LDX_ShowingFinished == true) {
@@ -24,6 +26,7 @@ LDX_ShowingEndFunction();
 window.setTimeout(LDX_ShowingElement,10);
 }
 }
+
 function hide(name,finish) {
 hidingName = name;
 hidingFinish = finish;
@@ -31,12 +34,14 @@ hidingFinished = false;
 hidingo = parseInt(100);
 hiding();
 }
+
 function hiding() {
 if(hidingo > 0) {
 hidingo--;
 } else {
 hidingFinished = true;
 }
+
 document.getElementById(hidingName).style.opacity = hidingo / 100;
 document.getElementById(hidingName).style.filter = "alpha(opacity=" + hidingo * 100 + ")";
 if(hidingFinished == true) {
@@ -48,6 +53,7 @@ window.setTimeout(hidingFinish,1);
 window.setTimeout(hiding,10);
 }
 }
+
 function fadeBackground(r,g,b,nr,ng,nb,end) {
 LDX_r = r;
 LDX_g = g;
@@ -58,6 +64,7 @@ LDX_nb = nb;
 LDX_EndFade = end;
 backgroundFading();
 }
+
 function fadingBackground() {
 if(LDX_r < LDX_nr) {
 LDX_r++;
